@@ -27,7 +27,22 @@ Las respuestas propuestas en este repositorio son producto del trabajo de los es
 
 \subsection{Capítulo 5: Nombres, Enlaces y Alcances}
 \input{c5p4}
-%\input{c5p5}
+\input{c5p5}
+Capitulo 5 pregunta 5
+En caso de querer llamar en nuestro programa números pseudoaleatorios, que han sido generados por un subprograma se necesita del history-sensitivy para almacenar la última iteración de la variable localmente. 
+Ejemplo de un subprograma generando numeros pseudoaleatorios:
+
+ public void generarSerieDeAleatorios () \{  \\
+
+        Random numAleatorio;
+
+        numAleatorio = new Random ();
+
+        for (int i=0; i < serieAleatoria.size(); i++)  \{
+
+        serieAleatoria.set(i, numAleatorio.nextInt(1000) );
+
+         \}
 %\input{c5p6}
 %\input{c5p7}
 
