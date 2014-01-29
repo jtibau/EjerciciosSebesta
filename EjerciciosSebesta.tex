@@ -45,6 +45,34 @@ Ejemplo de un subprograma generando numeros pseudoaleatorios:
          \}
 %\input{c5p6}
 %\input{c5p7}
+Capitulo 5 pregunta 7
+Supongamos que el siguiente programa de JavaScript fue interpretado utilizando las reglas de static-scoping.
+¿Que valor de X se muestra en la funcion sub1? 
+Respuesta: El valor de X que muestra la funcion sub1 es 5.
+Bajo las reglas  de Dynamic-scoping, ¿Que valor de X muestra la funcion sub1?
+Respuesta: El valor de X que muestra la funcion sub1 es 10.
+
+var x;
+function sub1() {
+document.write("x = " + x + "<br />");
+}
+function sub2() {
+var x;
+x = 10;
+sub1();
+}
+x = 5;
+sub2();
+
+Static-scoping
+ Las  declaraciones locales de un funcion sólo incluyen a los presentes en la función y no a los que puedan estar presentes en funciones anidadas  dentro de esa función.
+ Si se declara una variable con el mismo nombre de una variable fuera de la funcion,estas variables no se relacionan, son totalmente distintas.
+
+Dynamic-scoping
+ El uso de esta norma de alcance, primero buscamos una definición local de una variable. Si no lo encuentra, se busca en la pila de llamadas para una definición.
+
+
+
 
 % Continuar con los siguientes capítulos y ejercicios:
 % Ch6: 1, 2, 7
