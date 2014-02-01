@@ -27,6 +27,9 @@ Las respuestas propuestas en este repositorio son producto del trabajo de los es
 
 \subsection{Capítulo 5: Nombres, Enlaces y Alcances}
 \input{c5p4}
+Están estrechamente relacionados porque las variables implícitas de pila dinámica están obligadas
+a un almacenamiento dinámico cuando se asignan valores mediante un enlace de tipo dinámico que es el que permite asignar valores de cualquier tipo a cualquier variable.
+
 \input{c5p5}
 Capitulo 5 pregunta 5
 En caso de querer llamar en nuestro programa números pseudoaleatorios, que han sido generados por un subprograma se necesita del history-sensitivy para almacenar la última iteración de la variable localmente. 
@@ -43,8 +46,17 @@ Ejemplo de un subprograma generando numeros pseudoaleatorios:
         serieAleatoria.set(i, numAleatorio.nextInt(1000) );
 
          \}
-%\input{c5p6}
-%\input{c5p7}
+\input{c5p6}
+a.sub2 y sub3--Se determina en el momento que se ejecuta el codigo en el subrograma 2 y 3 tomara la primera 
+asignacion a la variable x dada en el main(variable global).
+
+b.sub 1--  La union de la variable se determina en el momento que se ejecuta el programa, por lo tanto toma el 
+valor del ultimo subprograma que asigno valor a la variable.
+
+\input{c5p7}
+reglas de alcance estático-- 5 variable global
+reglas de alcance dinámico--10 variable local
+
 
 % Continuar con los siguientes capítulos y ejercicios:
 % Ch6: 1, 2, 7
