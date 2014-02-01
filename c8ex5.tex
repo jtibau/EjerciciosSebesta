@@ -1,0 +1,57 @@
+
+\documentclass{article}
+\usepackage{listings}
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{setspace} %paquete para interlineado
+\usepackage{graphicx} %para insertar graficos
+\usepackage{parskip} % npi de q es
+\usepackage{color} %colores
+\usepackage{float}             % Include the listings-package
+\begin{document}
+\lstset{language=JAva}          % Set your language (you can change the language for each code-block optionally)
+\title{Sebesta Chapter 8 - Ex 5}
+\begin{lstlisting}[frame=single]  % Start your code-block
+/**
+ * Fausto Mora - Cap 8 ex 5
+ */
+package sebesta;
+
+/**
+ *
+ * @author Lost Legion
+ */
+public class chapterEightExFive {
+    
+    public static void main(String args[]){
+        boolean encontrado =false;
+        int n=5; //suponemos la dimesion 5
+        int[][] x = new int[n][n];
+        
+        for(int i=0;i<=n;i++){
+            int acum=0;
+            for(int j=0;j<=n;j++){
+                if(x[i][j]==0){
+                    acum++;
+                }
+                if(acum==n && !encontrado){
+                    System.out.println("Encontrado¡¡¡");
+                    encontrado=true;
+                }
+            }      
+        }
+        
+    }
+}
+}
+\end{lstlisting}
+Aunque el codigo presentado en el programa es mas corto, con seguridad el mismo ejercicio transcrito a lenguaje java presenta mayor legibilidad
+\end{document}
