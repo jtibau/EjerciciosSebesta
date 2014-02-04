@@ -57,6 +57,42 @@ valor del ultimo subprograma que asigno valor a la variable.
 reglas de alcance estático-- 5 variable global
 reglas de alcance dinámico--10 variable local
 
+\input{c9p1}
+Ventaja
+El usuario tiene mayor flexibilidad.El lenguaje que tiene soporte a las funciones o tipos de datos definidas por el usuario, permiten que el utilice funciones definidas para trabajarlas con sus objetos en base a sus necesidades.
+
+Overloading--- Legibilidad y flexibilidad
+
+ \\
+Desventaja
+El usuario podria hacer construcciones de una manera incorrecta y caer en problemas de fiabilidad.
+
+Overloading---Operaciones confusas y no obtener el resultado esperado.
+
+Ejemplos overloading:
+
+Phyton  \\
+def suma(a,b):  \\
+    resultado=a+b  \\
+    return resultado  \\ \\
+
+def suma(a,b,c)  \\
+     resultado=a+b+c  \\
+     return resultado  \\
+
+C++  \\
+class imprimir  \\
+\{  \\
+public:  \\
+void print (char * c)\{  \\
+ cout << “Imprime frase:”<<c<<endl;  \\
+\}  \\
+void print (int i)\{  \\
+ cout << “Imprime entero:”<<i<<endl;  \\
+ \}  \\
+\}  \\
+
+
 
 % Continuar con los siguientes capítulos y ejercicios:
 % Ch6: 1, 2, 7
