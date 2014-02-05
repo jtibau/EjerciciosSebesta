@@ -1,0 +1,32 @@
+\subsubsection{Pregunta 4:Escribir en C\# un programa que pase por referencia un literal a un subprograma, que intenta cambiar el parametro. Dado la filosofia total de C\#, explique los resultados.}
+\lstset{language = C}  %Seteo para poner Codigo de Lenguaje C
+Código creado para la explicación en C\#.
+\begin{lstlisting}[frame = single] %Comienzo del Código
+
+ static void Main(string[] args)
+        {
+            String a;
+            int b= -1;
+            Program p = new Program();
+            System.Console.Write("Ingrese numero:\n");
+            a = Console.ReadLine();
+            System.Console.Write("El numero es: " +a);
+            System.Console.Write("\n");
+            b = Convert.ToInt32(a);
+            p.fun(ref b);
+            System.Console.Write("El numero enviado a la funcion por referencia es: "+b);
+            System.Console.Read();
+            //System.Console.ReadKey();
+        }
+
+        public void fun (ref int x){
+            x = x + 5;  
+        }
+\end{lstlisting}
+OUTPUT:\\
+	Ingrese numero: 6\\
+	El numero es: 6\\
+	El numero enviado a la funcion por referencia es:11\\
+	El lenguague C\# recibe por defecto cuando se ingresa por teclado un Strign a este valor hay que convertirlo a un entero para enviarlo a nuestra funcion con la que queremos mostrar lo que deseamos.\\
+ Lo que queremos mostrar es el cambio que se produce al valor de una variable siendo enviada a un subrprograma por referencia.\\
+
