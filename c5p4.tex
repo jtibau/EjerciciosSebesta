@@ -1,3 +1,41 @@
-\subsubsection{Pregunta 4: Escriba un script en Python con subprogramas triplemente anidados, donde cada subprograma referencie a variables que han sido definidas en otros niveles de la jerarquía}
+\subsubsection{Pregunta 4: Subprogramas que definen variables que son utilizadas en otro subprograma}
 
-Escriba su respuesta con claridad. En las secciones de código utilice listings.
+\begin{verbatim}
+
+def leer():
+       listadeCompras=open('lista.txt','r')
+       linea=listadeCompras.readline()
+       while linea!="":
+             linea=listadeCompras.readline()
+             generarLista(linea)
+             
+def generarLista(linea):
+                     if 'limon' or 'naranja' or 'kiwi' in linea:
+                             lista1(linea)
+                     elif 'almendras' or 'cacahuetes' or 'pimienta'  in linea:
+                             lista2(linea)
+                                      
+def lista1(linea):
+       print("Vitamina C:")
+       for i in range(3):
+             if i==1:
+                    print(str(linea)+"sirve para los huesos")
+             if i==2:
+                    print(str(linea)+"sirve para los dientes")
+             if i==3:
+                    print(str(linea)+"reduce los sintomas de alergias")
+               
+
+def lista2(linea):
+       print("Vitamina E:")
+       for i in range(3):
+             if i==1:
+                    print(str(linea)+"sirve para la circulacion")
+             if i==2:
+                    print(str(linea)+"sirve para el cabello")
+             if i==3:
+                    print(str(linea)+"sirve para el colesterol")
+                        
+leer()
+
+\end{verbatim}
