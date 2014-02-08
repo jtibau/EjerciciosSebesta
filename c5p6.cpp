@@ -10,7 +10,7 @@ int main(){
 }
 
 //Error
-//c5p6.cpp: En la función ‘int main()’:
-//c5p6.cpp:8:11: error: la búsqueda de nombre de ‘i’ 
-//cambió por el nuevo alcance ISO de ‘for’ 
+//c5p6.cpp: En la función int main():
+//c5p6.cpp:8:11: error: la búsqueda de nombre de 'i'
+//cambió por el nuevo alcance ISO de 'for'
 //[-fpermissive]

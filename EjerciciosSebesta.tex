@@ -13,6 +13,7 @@
 \usepackage[T1]{fontenc}                                % Asegura que el documento resultante use caracteres de una fuente apropiada.
 
 \usepackage{hyperref}                                % Permite poner urls y links dentro del documento
+\usepackage{listings}
 
 \title{Ejercicios de Programación - Sebesta}
 \author{Lenguajes de Programación - ESPOL}
@@ -34,7 +35,52 @@ Las respuestas propuestas en este repositorio son producto del trabajo de los es
 \subsection{Capítulo 9: SubProgramas.}
 \input{c9p4}
 %\input{c5p6}
-%\input{c5p7}
+\subsection{Capítulo 7: Expressions and Assignment Statements}
+\begin{itemize}
+\item {\bf Pregunta 3} \\\\
+Escribe un programa en tu lenguaje favorito que determine y muestre la precedencia y asociatividad de sus operadores aritmeticos y booleanos.\\
+Lenguaje Java\\
+\begin{lstlisting}[frame=single]  % Start your code-block
+using System;
+public static void main(String[] args) {
+        
+        float a,b,c,d,e,res1,res2, res3;
+        res1=res2=res3=0;
+        
+        a=8;
+        b=4;
+        c=3;
+        d=5;
+        e=0;
+        res1=a/b*c+d;
+        res2=a*b/c+d;
+        if(e!=0){
+            res3=e*b*(c+d);
+        }
+        System.out.println("El resultado 1 es: "+res1);
+        System.out.println("El resultado 2 es: "+res2);
+        System.out.println("El resultado 3 es: "+res3);
+
+
+\end{lstlisting}
+
+Se sabe que en Java: La Exponenciación tiene precedencia 1(mayor), cambio de signo(-) e identidad(+) tienen precedencia 2, division y multiplicacion tienen precedencia 3, la suma y resta tienen precedencia 4 ,etc.\\
+Los operadores también pueden tener la misma precedencia. En este caso, la asociatividad determina el orden en que deben actuar los operadores. \\
+La asociatividad puede ser de izquierda a derecha o de derecha a izquierda.\\
+En el resultado 1(res1), primero se resuelve los operadores de mayor precedencia. En este caso, tenemos la division y multiplicacion de igual precedencia.\\
+Como ambas tienen la misma precedencia y asociatividad desde la izquierda, lo que significa que los operadores de la izquierda se procesan (division)antes que los operadores de la derecha(multiplicacion), quiere decir:\\
+Primero, realiza a/b, luego ese resultado * c, y finalmente el resultado de la multiplición se le suma d. \\\\
+En el resultado 2 (res2), como (/,*) tienen misma precedencia, primero se resuelve el operador de la izquierda (*), luego la división. Finalmente la suma de menor precedencia\\\\
+En el resultado 3, se hace una evaluación de corto circuito. Cada vez que e sea diferente de 0, realiza la operación; caso contrario es 0\\\\\\
+
+OUTPUT\\
+El resultado 1 es: 11.0\\
+El resultado 2 es: 15.666667\\
+El resultado 3 es: 0.0\\
+        
+
+
+\end{itemize}
 
 % Continuar con los siguientes capítulos y ejercicios:
 % Ch6: 1, 2, 7
