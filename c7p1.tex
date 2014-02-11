@@ -1,0 +1,26 @@
+\subsubsection{Pregunta 1:Ejecute el código dado en el Problema 13(Set de Problemas) en un sistema que soporte C para determinar los valores de sum1 y sum2. Explique los resultados.}
+\lstset{language = C}  %Seteo para poner Codigo de Lenguaje C
+Código dado en el Problema 13(Set de Problemas)
+\begin{lstlisting}[frame = single] %Comienzo del Código
+
+int fun(int *k){
+	*k+=4; /* Incrementa el valor de x + 4*/
+	return 3 * (*k) -1 /* Retorna */
+}
+
+void main(){
+	int i=10, j=10,sum1,sum2;
+	sum1 =(i/2) + fun(&i);
+	sum2 = fun(&j) + (j/2);
+}
+\end{lstlisting}
+OUTPUT:\\
+	sum1 = 46\\
+	sum2 = 48\\
+	Estos resultados se da por las Reglas de Asociatividad del lenguaje C, 
+	que es la asociatividad de izquierda a derecha, esto significa que e operador de la izquierda se evaluara primero.\\
+	
+	Para sum2, la dirección de memoria cambia debido a las operaciones que se realiza
+	con la refercencia a la variable fun, por esta razón hay diferentes resultados.\\
+
+
