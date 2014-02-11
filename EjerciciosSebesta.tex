@@ -13,6 +13,7 @@
 \usepackage[T1]{fontenc}                                % Asegura que el documento resultante use caracteres de una fuente apropiada.
 
 \usepackage{hyperref}                                % Permite poner urls y links dentro del documento
+\usepackage{listings}
 
 \title{Ejercicios de Programación - Sebesta}
 \author{Lenguajes de Programación - ESPOL}
@@ -29,27 +30,149 @@ Las respuestas propuestas en este repositorio son producto del trabajo de los es
 
 \subsection{Capítulo 5: Nombres, Enlaces y Alcances.}
 \input{c5p4}
-%\input{c5p5}
-Capitulo 5 pregunta 5
-En caso de querer llamar en nuestro programa números pseudoaleatorios, que han sido generados por un subprograma se necesita del history-sensitivy para almacenar la última iteración de la variable localmente. 
-Ejemplo de un subprograma generando numeros pseudoaleatorios:
+\input{c5p5}
+\input{c5p6}
+\input{c5p7}
+\subsection{Capítulo 7: Expressions and Assignment Statements}
+\input{c7p1}
+\input{c7p2}
+\begin{itemize}
+\item {\bf Pregunta 3} \\\\
+Escribe un programa en tu lenguaje favorito que determine y muestre la precedencia y asociatividad de sus operadores aritmeticos y booleanos.\\
+Lenguaje Java\\
+\begin{lstlisting}[frame=single]  % Start your code-block
+using System;
+public static void main(String[] args) \{
+        
+        float a,b,c,d,e,res1,res2, res3;
+        res1=res2=res3=0;
+        
+        a=8;
+        b=4;
+        c=3;
+        d=5;
+        e=0;
+        res1=a/b*c+d;
+        res2=a*b/c+d;
+        if(e!=0)\{
+            res3=e*b*(c+d);
+        \}
+        System.out.println("El resultado 1 es: "+res1);
+        System.out.println("El resultado 2 es: "+res2);
+        System.out.println("El resultado 3 es: "+res3);
+\}
 
- public void generarSerieDeAleatorios () \{  \\
+\end{lstlisting}
 
-        Random numAleatorio;
+Se sabe que en Java: La Exponenciación tiene precedencia 1(mayor), cambio de signo(-) e identidad(+) tienen precedencia 2, division y multiplicacion tienen precedencia 3, la suma y resta tienen precedencia 4 ,etc.\\
+Los operadores también pueden tener la misma precedencia. En este caso, la asociatividad determina el orden en que deben actuar los operadores. \\
+La asociatividad puede ser de izquierda a derecha o de derecha a izquierda.\\
+En el resultado 1(res1), primero se resuelve los operadores de mayor precedencia. En este caso, tenemos la division y multiplicacion de igual precedencia.\\
+Como ambas tienen la misma precedencia y asociatividad desde la izquierda, lo que significa que los operadores de la izquierda se procesan (division)antes que los operadores de la derecha(multiplicacion), quiere decir:\\
+Primero, realiza a/b, luego ese resultado * c, y finalmente el resultado de la multiplición se le suma d. \\\\
+En el resultado 2 (res2), como (/,*) tienen misma precedencia, primero se resuelve el operador de la izquierda (*), luego la división. Finalmente la suma de menor precedencia\\\\
+En el resultado 3, se hace una evaluación de corto circuito. Cada vez que e sea diferente de 0, realiza la operación; caso contrario es 0\\\\\\
 
-        numAleatorio = new Random ();
+OUTPUT\\
+El resultado 1 es: 11.0\\
+El resultado 2 es: 15.666667\\
+El resultado 3 es: 0.0\\
 
-        for (int i=0; i < serieAleatoria.size(); i++)  \{
+\item {\bf Pregunta 4} \\\\
+Escribir un programa en Java que exponga la regla para el orden de evaluación de operando cuando uno de los operandos es un método call.\\
+Lenguaje Java\\
+\begin{lstlisting}[frame=single]  % Start your code-block
+public class JavaApplication2 \{
+    final static int num=5;
+    static int a=5;
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) \{
+        
+          a = fun1()+a; 
+          System.out.println(a); 
+    \}
 
-        serieAleatoria.set(i, numAleatorio.nextInt(1000) );
+    static int fun1() \{
+            a = 17;
+            return 3;
+       \}
 
-         \}
+\}
+
+\end{lstlisting}
+OUTPUT\\
+20\\
+Como podemos ver en el main en la 1era linea, fun1() retorna 3 y actualiza la variable global 'a'=17 y luego suma 17+3 asignando 20 a 'a'. Esto se debe a que en JAVA el operador '+' tiene asociatividad desde la izquierda.\\
+En cambio si fuese:  a = a + fun1();. En este caso primero 'a'=5 + fun1() que retorne 3; dando una asignación de 8 a la variable a.
+
+\item {\bf Pregunta 5} \\\\
+Lenguaje C++
+\begin{lstlisting}[frame=single]  % Start your code-block
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<windows.h>
+#include<math.h>
+
+int fun1();
+
+extern int a = 10;
+void main()\{
+	
+	a = fun1()+a;  // a = a+fun1();
+	printf("\%d", a);
+	getch();
+\}
+
+int fun1() \{
+	a = 17;
+	return 3;
+\}
+\end{lstlisting}
+
+OUTPUT\\
+20\\
+Como podemos ver en el main en la 1era linea, comparado con JAVA Y Si Shard en vez de que fun1() retorne 3 y actualize la variable global 'a' a 17,y luego sumarlos y asignarle 20 a 'a'. En C++, sea a = fun1()+a  ó  a = a+fun1(), llamado de función en la izq o derecha del operador en este caso '+'; siempre al llamar fun1(), este va actualizar la variable global a =17 y luego va sumarle 3, asignando un valor de 20 a  la variable 'a'. 
+
+
+\item {\bf Pregunta 6} \\\\
+Lenguaje Si Sharp\\
+\begin{lstlisting}[frame=single]  % Start your code-block
+class Program
+    \{
+        static int a = 5;
+        static void Main(string[] args)
+        \{
+            a = a +fun1();
+            Console.WriteLine(a);
+            Console.ReadLine();
+       \}
+
+        static int fun1()
+        \{
+            a = 17;
+            return 3;
+        \}
+    }
+\end{lstlisting}
+OUTPUT\\
+8\\ 
+Como podemos ver en Si Sharp también se cumple la regla de la asociativad. En este caso el operador '+' asoicativdad desde la izquierda. Primero a=5, luego le suma 3; cuyo resultado que es 8 se le asigna a la variable a.\\
+En cambio si fuese:  a = fun1()+a. En ese caso fun1() retorna 3 y actualiza la variable global 'a'=17 y luego suma 17+3 asignando 20 a la varaible a.
+
+
+\end{itemize}
 
 \subsection{Capítulo 9: SubProgramas.}
 \input{c9p4}
 %\input{c5p6}
-%\input{c5p7}
+
+        
+
+
+
 
 % Continuar con los siguientes capítulos y ejercicios:
 % Ch6: 1, 2, 7
