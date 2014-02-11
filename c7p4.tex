@@ -1,0 +1,23 @@
+\subsubsection{C7 Pregunta 4}
+\begin{lstlisting}
+ public class JavaApplication2 {
+     final static int num=5;
+     static int a=5;
+    
+     public static void main(String[] args) {          
+           a = fun1()+a; 
+           System.out.println(a); 
+     }
+ 
+     static int fun1() {
+             a = 17;
+             return 3;
+        }
+ 
+ }
+ 
+ \end{lstlisting}
+ OUTPUT\\
+ 20\\
+ Como podemos ver en el main en la 1era linea, fun1() retorna 3 y actualiza la variable global 'a'=17 y luego suma 17+3 asignando 20 a 'a'. Esto se debe a que en JAVA el operador '+' tiene asociatividad desde la izquierda.\\
+ En cambio si fuese:  a = a + fun1();. En este caso primero 'a'=5 + fun1() que retorne 3; dando una asignación de 8 a la variable a.

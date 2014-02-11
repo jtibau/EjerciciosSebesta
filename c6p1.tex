@@ -1,0 +1,29 @@
+\subsubsection{C6 Pregunta 1}
+\begin{lstlisting}
+int main (int argc, char *argv[])
+{
+	int i,div_int;
+	float div_float,j=11.00;
+	int arreglo[3];
+	arreglo[2]=10;
+	div_int=arreglo[2]/2;
+	div_float=j/2;
+	if(div_int!=div_float){
+		printf("%i diferente %.2f",div_int,div_float);
+		 Sleep(1000);
+	}if(div_int==div_float){
+	     printf("%i igual %.2f",div_int,div_float);
+		 Sleep(1000);
+	}
+	
+  return 0;
+}
+ \end{lstlisting}
+La compatibilidad de tipos en C es muy variada, si comparamos como en el primer \\
+if es claro que apesar de que los dos son numeros cinco los decimales de el segundo\\
+valor hacen que la igualdad no se cumpla en caso de haber salido un 5.00 la igualdad \\
+se cumplia ignorando que sean de diferentes tipos.Esto hace que cuando comparamos en \\
+c el se encargue de algunas conversiones para llevar a caboo comparaciones en el \\
+programa, en caso de que cambiemos a int el divfloat nos advertira de la perdida de datos \\
+pero no nos generara error alguno.
+  

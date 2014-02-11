@@ -1,0 +1,86 @@
+\subsubsection{C5 Pregunta 7: Tres funciones en C donde se declare un arreglo de forma\\
+estatica, otra stack y la ultima declaracion como heap}
+
+\begin{verbatim}
+STACK 
+
+#define MAX 3000
+
+int main (int argc, char *argv[])
+{
+ 
+  int arreglo[MAX];
+  int i;
+  srand(time(NULL));
+
+  for(i=0;i<MAX-1;i++)
+  arreglo[i]=1+rand()%100;
+
+  for(i=0;i<MAX-1;i++){
+  int doble;
+  doble=arreglo[i]*2;
+  printf("El doble del numero aleatorio en la posicion %d : %d\n",i,doble);
+ 
+  }
+  return 0;
+}
+
+HEAP
+
+
+#define MAX 3000
+int main (int argc, char *argv[])
+{
+ 
+  int arreglo[3000]; 
+  int i;
+  int *p;
+  srand(time(NULL));  
+
+
+  for(i=0;i<2999;i++){
+  p= (int *)malloc(3000*sizeof(int));
+  arreglo[i]=1+rand()%100;
+  *p=arreglo[i];
+  }
+ 
+
+  for(i=0;i<2999;i++){
+  int doble;
+  p= (int *)malloc(3000*sizeof(int));
+  *p=arreglo[i];
+  doble=*p*2;
+  printf("El doble del numero aleatorio en la posicion %d manejado por heap es: %d\n",i,doble);
+  
+  }
+
+  free(p);
+  return 0;
+}
+
+STATIC
+
+int main (int argc, char *argv[])
+{
+ 
+  static int arreglo[3000];
+  int i;
+  srand(time(NULL));
+
+  for(i=0;i<2999;i++)
+  arreglo[i]=1+rand()%100;
+
+  for(i=0;i<2999;i++){
+  int doble;
+  doble=arreglo[i]*2;
+  printf("El doble del numero aleatorio en la posicion %d con arreglo estatico es: %d\n",i,doble);
+ 
+  }
+  return 0;
+}
+
+\end{verbatim}
+Stack tiene un aceso mas rapido, el espacio es manejado por el CPU es limitado y no puede ser redefinido.\\
+En el caso del heap nosotros necesitamos manejar la memoria, acceso mas lento y no es limitado\\
+Static declaracion unica de una variable que mantiene su dimension a lo largo del tiempo de vida del programa.
+

@@ -1,0 +1,76 @@
+\subsubsection{C7 Pregunta 1}
+
+\begin{lstlisting}
+
+C++
+int fun(int *k) {
+*k += 4;
+return 3 * (*k) - 1;
+}
+
+void main() {
+int i = 10, j = 10, sum1, sum2;
+sum1 = (i / 2) + fun(&i);
+sum2 = fun(&j) + (j / 2);
+}
+
+ \end{lstlisting}
+
+\begin{lstlisting}
+package pruebadenisse;
+
+
+JAVA
+/**
+ *
+ * @author Dennise
+ */
+public class Main {
+
+    public int fun(int k){
+    k+=4;
+    return 3*(k)-1;
+    }
+    
+    public static void main(String[] args) {
+        Main c=new Main();
+        int i = 10, j = 10, sum1, sum2;
+        sum1 = (i / 2) +c.fun(i);
+        System.out.println(sum1);
+        sum2 =  c.fun(j)+(j / 2);
+        System.out.println(sum2);
+    }
+    
+}
+
+C#
+namespace pruebaDennise
+{
+    class Programa
+    {
+
+        public int fun(int k)
+        {
+            k += 4;
+            return 3 * (k) - 1;
+        }
+        static void Main(string[] args)
+        {
+
+            Programa p = new Programa();
+             int i = 10, j = 10, sum1, sum2;
+                sum1 = (i / 2) +p.fun(i);
+                Console.WriteLine(sum1);
+                sum2 =  p.fun(j)+(j / 2);
+                Console.WriteLine(sum2);
+                Console.ReadLine();
+                }
+    }
+}
+
+
+ \end{lstlisting}
+En CS y Java se observo el mismo resultado ya que son programas orientados a objeto. \\
+Devuelven 46 y 46 respectivamente.en el caso de C++ cambia debido a los punteros devuelve\\
+46 y48 respectivamente.
+

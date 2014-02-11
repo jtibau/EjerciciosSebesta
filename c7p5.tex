@@ -1,0 +1,19 @@
+\subsubsection{C7 Pregunta 5}
+\begin{lstlisting}
+
+ int fun1();
+ 
+ extern int a = 10;
+ void main(){
+ 	
+ 	a = fun1()+a;  // a = a+fun1();
+ 	printf("\%d", a);
+ 	getch();
+ }
+ 
+ int fun1() {
+ 	a = 17;
+ 	return 3;
+ }
+ \end{lstlisting}
+Como podemos ver en el main en la 1era linea, comparado con JAVA Y Si Shard en vez de que fun1() retorne 3 y actualize la variable global 'a' a 17,y luego sumarlos y asignarle 20 a 'a'. En C++, sea a = fun1()+a  ó  a = a+fun1(), llamado de función en la izq o derecha del operador en este caso '+'; siempre al llamar fun1(), este va actualizar la variable global a =17 y luego va sumarle 3, asignando un valor de 20 a  la variable 'a'. 

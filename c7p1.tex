@@ -1,0 +1,19 @@
+\subsubsection{C7 Pregunta 1}
+\begin{lstlisting}
+
+int fun(int *k) {
+*k += 4;
+return 3 * (*k) - 1;
+}
+
+void main() {
+int i = 10, j = 10, sum1, sum2;
+sum1 = (i / 2) + fun(&i);
+sum2 = fun(&j) + (j / 2);
+}
+
+ \end{lstlisting}
+En el programa la función fun() retorna el mismo valor para sum1 y sum2 la diferencia \\
+esta en el orden al momento de hacer la suma. Sum 1 retorna 46 porque primero se \\
+hace la división teniendo i como 10 pero en el segundo caso, Sum2 el valor de referencia
+mandado en fun() cambio su direccion j por lo que da 48.Todo esta en el orden en la suma.

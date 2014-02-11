@@ -1,0 +1,51 @@
+\subsubsection{C5 Pregunta6: Sentencia for alcance de la variabe declarada en ella en los tres lenguajes acontinuacion explicados }
+
+\begin{verbatim}
+
+JAVA
+import java.io.*;
+ 
+public class c5p6{
+    public static void main(String args[]){
+ 	for(int i = 0; i< 10 ; i++)
+ 	    {
+ 		System.out.println(i);
+ 	    }
+ 	System.out.println(i);
+     }
+ }
+
+C++
+#include <iostream>
+using namespace std;
+ 
+int main(){
+   for (int i = 0 ; i<10; i++){
+     cout << i;
+   }
+   cout << i; 
+   return 0;
+ }
+
+C#
+using System;
+ 
+ class c5p6
+ {
+   static void Main()
+   {
+     for(int i = 0 ; i < 10 ; i++)
+       {
+ 	Console.WriteLine(i);
+       }
+     Console.WriteLine(i);
+   }
+ 
+ }
+
+\end{verbatim}
+En los tres lenguajes, el declarar una variable dentro del for\\
+y luego intentar accederla fuera del bloque for, nos genera \\
+un error. La variable tiene alcance local dentro del bloque for, y \\
+solo puede ser accedida dentro del mismo.
+

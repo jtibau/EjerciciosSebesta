@@ -1,0 +1,26 @@
+\subsubsection{C7 Pregunta 1}
+
+\begin{lstlisting}
+
+def pagoSemestral():
+
+       pagoxmateria=120
+       materiasxtomar=int(input("Cuantas Materias va a tomar este Semestre:   \n"))
+       promediocarrera=int(input("Cual es su promedio general:    \n"))
+       
+       if(9<=promediocarrera):
+          valorxpagar=(pagoxmateria*materiasxtomar)/2
+          print("Tu valor a pagar en es: $"+str(valorxpagar))
+       elif(8<=promediocarrera<9):
+          valorxpagar=(pagoxmateria*materiasxtomar)-(pagoxmateria*materiasxtomar)*(20/100)
+          print("Tu valor a pagar es: $"+str(valorxpagar))
+       else:
+          valorxpagar=(pagoxmateria*materiasxtomar)
+          print("Tu valor a pagar es: $"+str(valorxpagar))
+             
+pagoSemestral()
+
+ \end{lstlisting}
+En Python como en la mayoria de lenguajes existe la regla de precedencia izquierda a derecha \\
+con excepcion de la exponenciacion que es lo contrario. En este ejemplo se calcula el valor a pagar \\
+en dolares para registrarse en un semestre de una universidad X.

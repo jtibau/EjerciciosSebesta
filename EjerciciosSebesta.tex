@@ -1,5 +1,6 @@
 \documentclass[12pt,oneside]{article}
 \usepackage{geometry}                                % See geometry.pdf to learn the layout options. There are lots.
+\usepackage{listings}				% Permite utilizar lenguajes de programacion dentro de latex
 \geometry{a4paper}                                           % ... or a4paper or a5paper or ... 
 %\geometry{landscape}                                % Activate for for rotated page geometry
 %\usepackage[parfill]{parskip}                    % Activate to begin paragraphs with an empty line rather than an indent
@@ -15,6 +16,7 @@
 
 \title{Ejercicios de Programación - Sebesta}
 \author{Lenguajes de Programación - ESPOL}
+
 %\date{}                                                        % Activate to display a given date or no date
 
 \begin{document}
@@ -25,74 +27,30 @@ Las respuestas propuestas en este repositorio son producto del trabajo de los es
 
 \section{Preguntas y Respuestas}
 
-\subsection{Capítulo 5: Nombres, Enlaces y Alcances}
+\subsection{Capítulo 5: Nombres, Enlaces y Alcances.}
 \input{c5p4}
-Están estrechamente relacionados porque las variables implícitas de pila dinámica están obligadas
-a un almacenamiento dinámico cuando se asignan valores mediante un enlace de tipo dinámico que es el que permite asignar valores de cualquier tipo a cualquier variable.
-
 \input{c5p5}
-Capitulo 5 pregunta 5
-En caso de querer llamar en nuestro programa números pseudoaleatorios, que han sido generados por un subprograma se necesita del history-sensitivy para almacenar la última iteración de la variable localmente. 
-Ejemplo de un subprograma generando numeros pseudoaleatorios:
-
- public void generarSerieDeAleatorios () \{  \\
-
-        Random numAleatorio;
-
-        numAleatorio = new Random ();
-
-        for (int i=0; i < serieAleatoria.size(); i++)  \{
-
-        serieAleatoria.set(i, numAleatorio.nextInt(1000) );
-
-         \}
 \input{c5p6}
-a.sub2 y sub3--Se determina en el momento que se ejecuta el codigo en el subrograma 2 y 3 tomara la primera 
-asignacion a la variable x dada en el main(variable global).
-
-b.sub 1--  La union de la variable se determina en el momento que se ejecuta el programa, por lo tanto toma el 
-valor del ultimo subprograma que asigno valor a la variable.
-
 \input{c5p7}
-reglas de alcance estático-- 5 variable global
-reglas de alcance dinámico--10 variable local
-
-\input{c9p1}
-Ventaja
-El usuario tiene mayor flexibilidad.El lenguaje que tiene soporte a las funciones o tipos de datos definidas por el usuario, permiten que el utilice funciones definidas para trabajarlas con sus objetos en base a sus necesidades.
-
-Overloading--- Legibilidad y flexibilidad
-
- \\
-Desventaja
-El usuario podria hacer construcciones de una manera incorrecta y caer en problemas de fiabilidad.
-
-Overloading---Operaciones confusas y no obtener el resultado esperado.
-
-Ejemplos overloading:
-
-Phyton  \\
-def suma(a,b):  \\
-    resultado=a+b  \\
-    return resultado  \\ \\
-
-def suma(a,b,c)  \\
-     resultado=a+b+c  \\
-     return resultado  \\
-
-C++  \\
-class imprimir  \\
-\{  \\
-public:  \\
-void print (char * c)\{  \\
- cout << “Imprime frase:”<<c<<endl;  \\
-\}  \\
-void print (int i)\{  \\
- cout << “Imprime entero:”<<i<<endl;  \\
- \}  \\
-\}  \\
-
-
+\subsection{Capítulo 6}
+\input{c6p1}
+\input{c6p2}
+%\input{c6p7}
+\subsection{Capítulo 7}
+\input{c7p1}
+\input{c7p2}
+\input{c7p3}
+\input{c7p4}
+\input{c7p5}
+\input{c7p6}
+%\input{c7p9}
+\subsection{Capítulo 8}
+\input{c8p3}
+\input{c8p4}
+\input{c8p5}
+\subsection{Capítulo 9}
+%\input{c9p1}
+\input{c9p5}
 
 % Continuar con los siguientes capítulos y ejercicios:
 % Ch6: 1, 2, 7

@@ -1,0 +1,24 @@
+\subsubsection{C7 Pregunta 6}
+\begin{lstlisting}
+ class Program
+     {
+        static int a = 5;
+         static void Main(string[] args)
+         {
+             a = a +fun1();
+             Console.WriteLine(a);
+             Console.ReadLine();
+        }
+ 
+        static int fun1()
+         {
+             a = 17;
+             return 3;
+         }
+     }
+ \end{lstlisting}
+ OUTPUT\\
+ 8\\ 
+Como podemos ver en Si Sharp también se cumple la regla de la asociativad. En este caso el operador '+' asoicativdad desde la izquierda. Primero a=5, luego le suma 3; cuyo resultado que es 8 se le asigna a la variable a.\\
+En cambio si fuese:  a = fun1()+a. En ese caso fun1() retorna 3 y actualiza la variable global 'a'=17 y luego suma 17+3 asignando 20 a la varaible a.
+  

@@ -1,0 +1,30 @@
+\subsubsection{C8 Pregunta 5}
+
+\lstset{language=JAva}       
+ \begin{lstlisting}
+
+ public class chapterEightExFive {
+     
+     public static void main(String args[]){
+         boolean encontrado =false;
+         int n=5; //suponemos la dimesion 5
+         int[][] x = new int[n][n];
+         
+         for(int i=0;i<=n;i++){
+             int acum=0;
+             for(int j=0;j<=n;j++){
+                 if(x[i][j]==0){
+                     acum++;
+                 }
+                 if(acum==n && !encontrado){
+                     System.out.println("Encontrad");
+                     encontrado=true;
+                 }
+             }      
+         }
+         
+     }
+ }
+ }
+ \end{lstlisting}
+ Aunque el codigo presentado en el programa es mas corto, con seguridad el mismo ejercicio transcrito a lenguaje java presenta mayor legibilidad

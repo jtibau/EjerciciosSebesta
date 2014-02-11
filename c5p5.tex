@@ -1,0 +1,72 @@
+\subsubsection{C5 Pregunta5: Generea la secuencia dada en C,C++ y java}
+
+\begin{verbatim}
+
+PROGRAMA EN C ---GENERA ERROR LA SECUENCIA PROPUESTA A COMPILAR
+
+void main(void)
+{
+	x=21;
+	printf("%i:",x);
+	int x;
+	x=42;
+	printf("%i",x);
+	Sleep(5000);
+}
+
+Lista de errores
+
+Error	1	error C2065: 'x' : identificador no declarado
+c:\users\dennise\documents\visual studio\2010\projects
+\pruebadenisse\pruebadenisse.cpp	
+10	1	pruebaDenisse
+
+Error	2	error C2065: 'x' : identificador no declarado	
+c:\users\dennise\documents\visual studio\2010\projects
+\pruebadenisse\pruebadenisse.cpp
+11	1	pruebaDenisse
+
+
+PROGRAMA EN C++  ---GENERA ERROR LA SECUENCIA PROPUESTA A COMPILAR
+
+void main(void)
+{
+	
+	cout << "Ingresa 21:";
+	cin >> x;
+        int x;
+	x=42;
+	cout << "X vale:" << x;
+	cin.get();cin.get();
+	
+}
+
+Error	1	error C2065: 'x' : identificador no declarado 
+c:\users\dennise\documents\visual studio 2010\projects
+\pruebadenisse\pruebadenisse.cpp
+13	1	pruebaDenisse
+
+
+PROGRAMA EN JAVA ---GENERA ERROR LA SECUENCIA PROPUESTA A COMPILAR
+
+public class PruebaDenisse {
+
+    static void main(String[] args) {
+        x=21;
+        int x;
+        x=42;
+       System.out.println(x);
+    }
+}
+
+Exception in thread "main" java.lang.RuntimeException: 
+Uncompilable source code - cannot find symbol
+  symbol:   variable x
+  location: class pruebadenisse.NewMain 
+	at pruebadenisse.NewMain.main(NewMain.java:17)
+Java Result: 1
+
+
+\end{verbatim}
+En los tres lenguajes se debe especificar primero el tipo de la variable sin esto \\
+resulta imposible gnerar el codigo planteado.

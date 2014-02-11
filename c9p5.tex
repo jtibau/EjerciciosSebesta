@@ -1,0 +1,77 @@
+\subsubsection{C9 Pregunta 5}
+
+ \lstset{language=JAva}    
+ \begin{lstlisting}
+
+ public class chapterNineExFive {
+ 	static int m =100;
+ 	public static int[][] static_matriz1 = new int[m][m];
+ 	public static int[][] static_matriz2 = new int[m][m];
+ 	public static int[][] static_resul = new int[m][m];
+ 	
+ 	
+ 	public chapterNineExFive(){
+ 
+ 	}
+ 	
+ 	public void matricesRandom(int[][] a, int[][] b){
+ 		for(int fil=0;fil<m;fil++){
+ 			for(int col=0;col<m;col++){
+ 				a[fil][col] = (int)(Math.random()*m)+1;
+ 				b[fil][col] = (int)(Math.random()*m)+1;
+ 				
+ 			}
+ 		}
+ 	}
+ 	
+ 	public void operacionesStatic(){
+ 		this.matricesRandom(static_matriz1, static_matriz2);
+ 		
+ 		 for(int i = 0; i < m; i++){
+ 	            for (int j = 0; j < m; j++){
+ 	                for (int k = 0; k < m; k++){
+ 	                    static_resul[i][j] += 
+                             static_matriz1[i][k] * static_matriz2[k][j];
+ 	                }
+ 	            }
+ 	        }
+
+ 	}
+ 	
+ 	public void operacionesDinamic(){
+ 		int[][] dinamic_matriz1 = new int[m][m];
+ 		int[][] dinamic_matriz2 = new int[m][m];
+ 		int[][] dinamic_resul = new int[m][m];
+ 		
+ 		this.matricesRandom(dinamic_matriz1, dinamic_matriz2);
+ 		
+ 		 for(int i = 0; i < m; i++){
+ 	            for (int j = 0; j < m; j++){
+ 	                for (int k = 0; k < m; k++){
+ 	                	dinamic_resul[i][j] += 
+                                  dinamic_matriz1[i][k] * dinamic_matriz2[k][j];
+ 	                }
+ 	            }
+ 	        }
+ 	
+ 	}
+ 
+ 
+ 	public static void main(String args[]){
+             
+ 		long startTime = System.nanoTime();
+ 		new  chapterNineExFive().operacionesStatic();
+ 		long endTime = System.nanoTime();
+ 		long duration = endTime - startTime;
+ 		System.out.println("Tiempo Estatico: " + duration);
+                
+                 
+                 long startTimeD = System.nanoTime();
+ 		new  chapterNineExFive().operacionesDinamic();
+ 		long endTimeD = System.nanoTime();
+ 		long durationD = endTimeD - startTimeD;
+                 System.out.println("Tiempo Dinamico: " + durationD);
+ 	}
+ }
+ \end{lstlisting}
+ El resultado de este operacion fue una media alrededor de 14,4u milis para la operacion statica y alrededor de  13,6u para la operacion dinamica. Aunque la diferencia es casi minima, y casi imperceptible el metodo dinamico resulto ser mas rapido que el estatico.

@@ -1,0 +1,38 @@
+\subsubsection{C6 Pregunta 2}
+
+\begin{lstlisting}
+double *multiplicarxdos (double *input) {
+  double *twice;
+   twice = (double*)malloc(sizeof(double));
+  *twice = *input * 2.0;
+  return twice;
+}
+
+int main (int argc, char *argv[])
+{
+  int *edad = (int *)malloc(sizeof(int));
+  *edad = 23;
+  double *salario = (double*)malloc(sizeof(double));
+  *salario = 12345.67;
+  double *miLista = (double*)malloc(3 * sizeof(double));
+  miLista[0] = 1.2;
+  miLista[1] = 2.3;
+  miLista[2] = 3.4;
+
+  double *twiceSalary = multiplicarxdos(salario);
+
+  printf("El doble del salario es %.3f\n", *twiceSalary);
+  Sleep(1000);
+
+  free(edad);
+  free(salario);
+  free(miLista);
+  free(twiceSalary);
+
+  return 0;
+
+}
+ \end{lstlisting}
+Se hace uso de la funcion free() en C cuando tenemos un acceso a memoria dinamica \\
+en el Heap, en este caso como en el ejemplo debemos gestionar la memoria pidiendola \\
+y despues liberandola repectivamente.
