@@ -1,0 +1,20 @@
+\subsection{Pregunta 4}
+\paragraph{ }
+
+Palabras clave de cierre únicos en sentecias compuestas tienen la ventaja de la legibilidad y el inconveniente de complicar el idioma al aumentar el número de palabras clave.
+
+\subsection{Pregunta 5}
+\paragraph{ }
+
+Un argumento a favor del uso de Python con niveles de jerarquia es que exige que los programadores utilizan un esquema de la sangría que promueve la lectura. Esto da como resultado una norma rígida para el diseño del programa que asegure que todos los programas en Python serán igualmente legible. Si el sangrado es bueno para la lectura, por qué no usarlo para indicar sentencias compuestas? Es difícil encontrar un argumento fuerte en contra del uso de la sangría para indicar la estructura del programa, aunque los programadores descuidados encontrarán la disciplina requerida molesto.
+
+
+\begin{lstlisting}[frame=single]
+	 d = 14
+	m = "Febrero"
+	a = 2014
+	def dime_fecha(dia, mes, anho):
+		return "%i de %s de %i del calendario gregoriano" % (dia, mes, anho)
+	print dime_fecha(d, m, a)
+
+\end{lstlisting}
