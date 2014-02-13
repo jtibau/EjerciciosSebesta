@@ -41,7 +41,7 @@ main()
 }
 \end{lstlisting}
 
-Ninguno de los siguientes dos bloques de código compilan en C++. En el listing 3, la variable 'x' aún no esta declarada al usarse en la primera asignación.
+En el listing 3, el programa imprime el valor de 21. Esto se debe a que la variable global (‘x’) es modificada al llamarse a la función ‘foo’. Dentro de esa función se crea, asimismo, una variable ‘x’ que esta solo dentro del scope de la función ‘foo’. Dentro del scope del ‘main’ solo está la variable ‘x’ global y no la ‘x’ de la función ‘foo’, por ende imprime ese valor que se le fue asignado al llamar a ‘foo’.
 En el listing 4, hay una nueva declaración de la variable 'x', generando una contradicción.
 
 \lstset{language=C++}          % Set your language (you can change the language for each code-block optionally)
@@ -51,14 +51,18 @@ En el listing 4, hay una nueva declaración de la variable 'x', generando una co
 #include <iostream>
 using namespace std;
 
-int main(void) {
-	
-	x = 21;
-	int x;
-	x = 42;
-	cout << x << endl;
-	system("pause");
-	return 0;
+int x ;
+
+void foo () { 
+    x =  21 ; 
+    int x ; 
+    x =  42 ;   
+}
+
+int main() {
+   foo();
+   printf("%d",x);
+   return 0;
 }
 \end{lstlisting}
 
@@ -78,20 +82,28 @@ int main(void) {
 }
 \end{lstlisting}
 
-Ninguno de los siguientes dos bloques de código compilan en Java. En el listing 5, la variable 'x' aún no esta declarada al usarse en la primera asignación.
+En el listing 5, lo primero que se realiza es la modificación a la variable global (x) a 21. Luego, se crea otra variable x (dentro de la función) y se le asigna a esta el valor de 42, muy aparte de la variable global, cuyo valor seguirá siendo 21. En el Main, el scope solo incluye a la variable global x, ya que la otra existe solo dentro del scope de la función. Por ende, solo se mostrara la variable global, con el valor que se le asignó al llamar a la función.
 En el listing 6, hay una nueva declaración de la variable 'x', generando una contradicción.
 
 \lstset{language=Java}          % Set your language (you can change the language for each code-block optionally)
 
 \begin{lstlisting}[caption= Pregunta 5 Capítulo 5, label=amb, frame=single]  % Start your code-block
   
-public static void main(String[] args) {
+public class Ejercicio5
+{
+    static int x;
+    public static void main( String[] args )
+    {
+        Ejercicio5 ej5 = new Ejercicio5();
+        ej5.ejercicio5();
+        System.out.println(x);
+    }
+    public void ejercicio5(){
         x = 21;
         int x;
         x = 42;
-        
-        System.out.println(x);
     }
+}
 \end{lstlisting}
 
 \begin{lstlisting}[caption= Pregunta 5 Capítulo 5, label=amb, frame=single]  % Start your code-block
