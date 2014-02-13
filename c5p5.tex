@@ -1,60 +1,107 @@
-\subsubsection{Pregunta5: Generea la secuencia dada en C,C++ y java}
+\subsection{Pregunta 5: Escriba una función en C que incluya las siguienes líneas de código: \newline
+x = 21; \newline
+int x; \newline
+x = 42; \newline
+Corra el programa y explique los resultados. Reescriba el mismo código en C++ y Java.}
 
-\begin{verbatim}
+Ninguno de los siguientes dos bloques de código compilan en C. En el listing 1, la variable 'x' aún no esta declarada al usarse en la primera asignación.
+En el listing 2, hay una nueva declaración de la variable 'x', generando una contradicción.
 
-PROGRAMA EN C ---GENERA ERROR LA SECUENCIA PROPUESTA A COMPILAR
+\lstset{language=C}          % Set your language (you can change the language for each code-block optionally)
 
-void main(void)
+\begin{lstlisting}[caption= Pregunta 5 Capítulo 5, label=amb, frame=single]  % Start your code-block
+  
+#include<stdio.h>
+
+main()
 {
-	x=21;
-	printf("%i:",x);
+	x = 21;
 	int x;
-	x=42;
-	printf("%i",x);
-	Sleep(5000);
+	x = 42;
+
+	printf("%d", x);
+	getch();
+
 }
+\end{lstlisting}
+\begin{lstlisting}[caption= Pregunta 5 Capítulo 5, label=amb, frame=single]  % Start your code-block
+  
+#include<stdio.h>
 
-Lista de errores
-
-Error	1	error C2065: 'x' : identificador no declarado	c:\users\dennise\documents\visual studio \\ 2010\projects\pruebadenisse\pruebadenisse.cpp	\\10	1	pruebaDenisse
-
-Error	2	error C2065: 'x' : identificador no declarado	c:\users\dennise\documents\visual studio\\ 2010\projects\pruebadenisse\pruebadenisse.cpp	\\11	1	pruebaDenisse
-
-
-PROGRAMA EN C++  ---GENERA ERROR LA SECUENCIA PROPUESTA A COMPILAR
-
-void main(void)
+main()
 {
-	
-	cout << "Ingresa 21:";
-	cin >> x;
-        int x;
-	x=42;
-	cout << "X vale:" << x;
-	cin.get();cin.get();
-	
+	int x;
+	x = 21;
+	int x;
+	x = 42;
+
+	printf("%d", x);
+	getch();
+
 }
+\end{lstlisting}
 
-Error	1	error C2065: 'x' : identificador no declarado \\	c:\users\dennise\documents\visual studio 2010\projects\pruebadenisse\pruebadenisse.cpp\\\	13	1	pruebaDenisse
+Ninguno de los siguientes dos bloques de código compilan en C++. En el listing 3, la variable 'x' aún no esta declarada al usarse en la primera asignación.
+En el listing 4, hay una nueva declaración de la variable 'x', generando una contradicción.
 
+\lstset{language=C++}          % Set your language (you can change the language for each code-block optionally)
 
-PROGRAMA EN JAVA ---GENERA ERROR LA SECUENCIA PROPUESTA A COMPILAR
+\begin{lstlisting}[caption= Pregunta 5 Capítulo 5, label=amb, frame=single]  % Start your code-block
+  
+#include <iostream>
+using namespace std;
 
-public class PruebaDenisse {
+int main(void) {
+	
+	x = 21;
+	int x;
+	x = 42;
+	cout << x << endl;
+	system("pause");
+	return 0;
+}
+\end{lstlisting}
 
-    static void main(String[] args) {
-        x=21;
+\begin{lstlisting}[caption= Pregunta 5 Capítulo 5, label=amb, frame=single]  % Start your code-block
+  
+#include <iostream>
+using namespace std;
+
+int main(void) {
+	int x;
+	x = 21;
+	int x;
+	x = 42;
+	cout << x << endl;
+	system("pause");
+	return 0;
+}
+\end{lstlisting}
+
+Ninguno de los siguientes dos bloques de código compilan en Java. En el listing 5, la variable 'x' aún no esta declarada al usarse en la primera asignación.
+En el listing 6, hay una nueva declaración de la variable 'x', generando una contradicción.
+
+\lstset{language=Java}          % Set your language (you can change the language for each code-block optionally)
+
+\begin{lstlisting}[caption= Pregunta 5 Capítulo 5, label=amb, frame=single]  % Start your code-block
+  
+public static void main(String[] args) {
+        x = 21;
         int x;
-        x=42;
-       System.out.println(x);
+        x = 42;
+        
+        System.out.println(x);
     }
-}
+\end{lstlisting}
 
-Exception in thread "main" java.lang.RuntimeException: \\ Uncompilable source code - cannot find symbol
-  symbol:   variable x\\
-  location: class pruebadenisse.NewMain \\
-	at pruebadenisse.NewMain.main(NewMain.java:17)
-Java Result: 1
-
-
-\end{verbatim}
+\begin{lstlisting}[caption= Pregunta 5 Capítulo 5, label=amb, frame=single]  % Start your code-block
+  
+public static void main(String[] args) {
+        int x;
+        x = 21;
+        int x;
+        x = 42;
+        
+        System.out.println(x);
+    }
+\end{lstlisting}
