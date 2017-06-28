@@ -1,0 +1,110 @@
+
+\documentclass{article}
+\usepackage{listings}
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{setspace} %paquete para interlineado
+\usepackage{graphicx} %para insertar graficos
+\usepackage{parskip} % npi de q es
+\usepackage{color} %colores
+\usepackage{float}             % Include the listings-package
+\begin{document}
+\lstset{language=JAva}          % Set your language (you can change the language for each code-block optionally)
+\title{Sebesta Chapter 9 - Ex 5}
+\begin{lstlisting}[frame=single]  % Start your code-block
+/**
+ * Fausto Mora - Cap 9 ex 5
+ */
+package sebesta;
+
+/**
+ *
+ * @author Lost Legion
+ */
+package sebesta;
+
+/**
+ *
+ * @author Lost Legion
+ */
+public class chapterNineExFive {
+	static int m =100;
+	public static int[][] static_matriz1 = new int[m][m];
+	public static int[][] static_matriz2 = new int[m][m];
+	public static int[][] static_resul = new int[m][m];
+	
+	
+	public chapterNineExFive(){
+
+	}
+	
+	public void matricesRandom(int[][] a, int[][] b){
+		for(int fil=0;fil<m;fil++){
+			for(int col=0;col<m;col++){
+				a[fil][col] = (int)(Math.random()*m)+1;
+				b[fil][col] = (int)(Math.random()*m)+1;
+				
+			}
+		}
+	}
+	
+	public void operacionesStatic(){
+		this.matricesRandom(static_matriz1, static_matriz2);
+		
+		 for(int i = 0; i < m; i++){
+	            for (int j = 0; j < m; j++){
+	                for (int k = 0; k < m; k++){
+	                    static_resul[i][j] += 
+                            static_matriz1[i][k] * static_matriz2[k][j];
+	                }
+	            }
+	        }
+
+	}
+	
+	public void operacionesDinamic(){
+		int[][] dinamic_matriz1 = new int[m][m];
+		int[][] dinamic_matriz2 = new int[m][m];
+		int[][] dinamic_resul = new int[m][m];
+		
+		this.matricesRandom(dinamic_matriz1, dinamic_matriz2);
+		
+		 for(int i = 0; i < m; i++){
+	            for (int j = 0; j < m; j++){
+	                for (int k = 0; k < m; k++){
+	                	dinamic_resul[i][j] += 
+                                 dinamic_matriz1[i][k] * dinamic_matriz2[k][j];
+	                }
+	            }
+	        }
+	
+	}
+
+
+	public static void main(String args[]){
+            
+		long startTime = System.nanoTime();
+		new  chapterNineExFive().operacionesStatic();
+		long endTime = System.nanoTime();
+		long duration = endTime - startTime;
+		System.out.println("Tiempo Estatico: " + duration);
+               
+                
+                long startTimeD = System.nanoTime();
+		new  chapterNineExFive().operacionesDinamic();
+		long endTimeD = System.nanoTime();
+		long durationD = endTimeD - startTimeD;
+                System.out.println("Tiempo Dinamico: " + durationD);
+	}
+}
+\end{lstlisting}
+El resultado de este operacion fue una media alrededor de 14,4u milis para la operacion statica y alrededor de  13,6u para la operacion dinamica. Aunque la diferencia es casi minima, y casi imperceptible el metodo dinamico resulto ser mas rapido que el estatico.
+\end{document}
