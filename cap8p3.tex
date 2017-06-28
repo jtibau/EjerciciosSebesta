@@ -1,0 +1,158 @@
+\subsubsection{Capitulo 8 Pregunta 3 literal A:Rewrite the following code segment using a multiple-selection statement
+in the following languages.}
+
+\lstset{language = java}  %Seteo para poner Codigo de Lenguaje java
+Código creado para la explicación en java.
+\begin{lstlisting}[frame = single] %Comienzo del Código
+
+public static void main(String[] args) {
+        int k=0, j=0;
+       printf("ingrese el valor de k");
+        Scanner entrada =  new Scanner(System.in);
+        k = entrada.nextInt();   
+        
+        switch(k){
+            case 1:
+              j=2*k-1;
+	   printf("%d",j);
+            case 2:
+                j=2*k-1;
+	     printf("%d",j);
+            case 3:
+                j=3*k+1;
+               printf("%d",j);
+            case 5:
+                 j=3*k+1;
+                printf("%d",j);
+            case 4:
+                j=4*k-1;
+	     printf("%d",j);
+            case 6:
+                j=k-2;
+	    printf("%d",j);
+            case 7:
+                j=k-2;
+              printf("%d",j);
+            case 8:
+                 j=k-2;
+	     printf("%d",j);
+            default:
+        }
+               
+    }
+}
+
+\end{lstlisting}
+OUTPUT:\\
+	Ingrese numero: 3\\
+	El numero es: 3\\
+	El valor de k es 3 y el programa de seleccion múltiple me lleva al case 5 \\
+	con la respectiva función del case 5 la salida por pantalla será 16.\\
+ 
+
+
+\lstset{language = python}  %Seteo para poner Codigo de Lenguaje Python
+Código creado para la explicación en java.
+\begin{lstlisting}[frame = single] %Comienzo del Código
+
+#!/bin/env python
+# -*- coding: utf8 -*-
+
+print("ingrese un valor del 1 al 8 ")
+
+def op1(k):
+     j=0
+     j=2*k-1
+     return j
+
+def op2(k):
+     j=0
+     j=3*k+1
+     return j
+
+def op3(k):
+     j=0
+     j=4*k-1
+     return j
+    
+def op4(k):
+    j=0
+    j=k-2
+    return j
+
+
+k = raw_input("k: ")
+ 
+operaciones = { '1': op1, '2': op1, '3': op2, '4': op3, '5' : op2 , '6' : op2,  '7' : op2, '8' : op2}
+ 
+#seleccion = raw_input('Escoge una: ')
+
+try:
+    resultado = operaciones[k](int(k))
+    print resultado
+except:
+    print("Esa opcion no existe")
+
+\end{lstlisting}
+
+OUTPUT:\\
+	Ingrese numero: 3\\
+	El numero es: 3\\
+	El valor de k es 3 y el programa de seleccion múltiple me lleva al case 5 \\
+	con la respectiva función del case 5 la salida por pantalla será 16.\\
+	El try es solo para que se produzca una exception si el numero ingresado\\
+	es diferente a las opciones disponibles, y el catch atrapa la excepcion\\
+	haciendo los respectivos pasos \\
+ 
+
+
+
+
+\lstset{language = c}  %Seteo para poner Codigo de Lenguaje C
+Código creado para la explicación en java.
+\begin{lstlisting}[frame = single] %Comienzo del Código
+
+
+int main(){
+     int k =0, j=0;
+       scanf("%d",&k);
+       switch(k){
+               
+            case 1:
+              j=2*k-1;
+              break;
+            case 2:
+                j=2*k-1;
+                break;
+            case 3:
+                j=3*k+1;
+                break;
+            case 5:
+                 j=3*k+1;
+                 break;
+            case 4:
+                j=4*k-1;
+                break;
+            case 6:
+                j=k-2;
+                break;
+            case 7:
+                j=k-2;
+                break;
+            case 8:
+                 j=k-2;
+                 break;
+            default:
+                break;
+       }
+     
+}
+
+\end{lstlisting}
+
+OUTPUT:\\
+	Ingrese numero: 3\\
+	El numero es: 3\\
+	El valor de k es 3 y el programa de seleccion múltiple me lleva al case 5 \\
+	con la respectiva función del case 5 la salida por pantalla será 16.\\
+	
